@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/backpack_button.pxo-6f10d3e93f4aee9a0d807b95b9f97fa6.stex"
+
+[deps]
+
+source_file="res://src/assets/ui/backpack_button.pxo"
+dest_files=[ "res://.import/backpack_button.pxo-6f10d3e93f4aee9a0d807b95b9f97fa6.stex" ]
+
+[params]
+

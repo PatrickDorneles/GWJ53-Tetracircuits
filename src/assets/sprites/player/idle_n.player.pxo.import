@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/idle_n.player.pxo-d6e54763472eeca04101de07e034f698.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/player/idle_n.player.pxo"
+dest_files=[ "res://.import/idle_n.player.pxo-d6e54763472eeca04101de07e034f698.stex" ]
+
+[params]
+

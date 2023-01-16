@@ -1,0 +1,132 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/system/MotherboardSlot.tscn" type="PackedScene" id=2]
+
+[node name="Motherboard" type="GridContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -960.0
+margin_bottom = -536.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 4
+
+[node name="Slot" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 16.0
+margin_bottom = 16.0
+
+[node name="Slot2" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_right = 32.0
+margin_bottom = 16.0
+
+[node name="Slot3" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_right = 48.0
+margin_bottom = 16.0
+
+[node name="Slot4" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_right = 64.0
+margin_bottom = 16.0
+
+[node name="Slot5" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 16.0
+margin_right = 16.0
+margin_bottom = 32.0
+
+[node name="Slot6" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 32.0
+margin_bottom = 32.0
+
+[node name="Slot7" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 32.0
+
+[node name="Slot8" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 16.0
+margin_right = 64.0
+margin_bottom = 32.0
+
+[node name="Slot9" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 32.0
+margin_right = 16.0
+margin_bottom = 48.0
+
+[node name="Slot10" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 48.0
+
+[node name="Slot11" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 48.0
+margin_bottom = 48.0
+
+[node name="Slot12" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 32.0
+margin_right = 64.0
+margin_bottom = 48.0
+
+[node name="Slot13" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 16.0
+margin_bottom = 64.0
+
+[node name="Slot14" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 32.0
+margin_bottom = 64.0
+
+[node name="Slot15" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 48.0
+margin_right = 48.0
+margin_bottom = 64.0
+
+[node name="Slot16" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 64.0
+margin_bottom = 64.0

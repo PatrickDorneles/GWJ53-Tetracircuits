@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/mouse_common.pxo-3b96b2b731271fda8a635858b9b91b8d.stex"
+
+[deps]
+
+source_file="res://src/assets/ui/mouse_common.pxo"
+dest_files=[ "res://.import/mouse_common.pxo-3b96b2b731271fda8a635858b9b91b8d.stex" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/walk_n.player.pxo-5dbe7f88cbaabdaba711b9898b8d4a42.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/player/walk_n.player.pxo"
+dest_files=[ "res://.import/walk_n.player.pxo-5dbe7f88cbaabdaba711b9898b8d4a42.stex" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/close_backpack_button.hover.pxo-dba76704df96f271b1a0591642b86257.stex"
+
+[deps]
+
+source_file="res://src/assets/ui/close_backpack_button.hover.pxo"
+dest_files=[ "res://.import/close_backpack_button.hover.pxo-dba76704df96f271b1a0591642b86257.stex" ]
+
+[params]
+
