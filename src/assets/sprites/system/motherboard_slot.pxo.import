@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/motherboard_slot.pxo-68cde535d1b174f184684f8f5a5abce8.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/system/motherboard_slot.pxo"
+dest_files=[ "res://.import/motherboard_slot.pxo-68cde535d1b174f184684f8f5a5abce8.stex" ]
+
+[params]
+

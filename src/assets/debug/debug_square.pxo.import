@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/debug_square.pxo-757337e1bf23f374d237e84295d4490c.stex"
+
+[deps]
+
+source_file="res://src/assets/debug/debug_square.pxo"
+dest_files=[ "res://.import/debug_square.pxo-757337e1bf23f374d237e84295d4490c.stex" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/inventory_background.pxo-d56a6b5d63541d86e16a130cb28de2e3.stex"
+
+[deps]
+
+source_file="res://src/assets/ui/inventory/inventory_background.pxo"
+dest_files=[ "res://.import/inventory_background.pxo-d56a6b5d63541d86e16a130cb28de2e3.stex" ]
+
+[params]
+

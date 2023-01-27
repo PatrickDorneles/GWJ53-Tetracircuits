@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/generic_background.pxo-14fcafa4ba8810c4d41149ba1a0ecad5.stex"
+
+[deps]
+
+source_file="res://src/assets/ui/generic_background.pxo"
+dest_files=[ "res://.import/generic_background.pxo-14fcafa4ba8810c4d41149ba1a0ecad5.stex" ]
+
+[params]
+

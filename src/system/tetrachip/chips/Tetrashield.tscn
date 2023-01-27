@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/assets/sprites/system/cube_icons/shield_icon.pxo" type="Texture" id=1]
+[ext_resource path="res://src/system/tetrachip/Tetrachip.tscn" type="PackedScene" id=2]
+
+[node name="Tetrashield" instance=ExtResource( 2 )]
+icon = ExtResource( 1 )
+description = "[u]Active[/u]
+You can use a shield with [Mouse Right]"
+can_rotate = false
+
+[node name="Placement" parent="CubePlacement" index="0"]
+margin_left = -8.0
+margin_top = -8.0
+margin_right = -8.0
+margin_bottom = -8.0
+rect_pivot_offset = Vector2( 16, 16 )
+
+[node name="DebugRect" parent="CubePlacement/Placement" index="0"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="Placement2" parent="CubePlacement" index="1"]
+margin_left = -24.0
+margin_top = -24.0
+margin_right = -24.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 16, 16 )
+
+[node name="DebugRect" parent="CubePlacement/Placement2" index="0"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="Placement3" parent="CubePlacement" index="2"]
+margin_left = -24.0
+margin_top = -8.0
+margin_right = -24.0
+margin_bottom = -8.0
+rect_pivot_offset = Vector2( 16, 16 )
+
+[node name="DebugRect" parent="CubePlacement/Placement3" index="0"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="Placement4" parent="CubePlacement" index="3"]
+margin_left = -8.0
+margin_top = -24.0
+margin_right = -8.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 16, 16 )
+
+[node name="DebugRect" parent="CubePlacement/Placement4" index="0"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 24.0
+margin_bottom = 24.0

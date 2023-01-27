@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/cost_bg.pxo-d6109a05dbf5c068f6307123df0c823c.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/system/cost_bg.pxo"
+dest_files=[ "res://.import/cost_bg.pxo-d6109a05dbf5c068f6307123df0c823c.stex" ]
+
+[params]
+

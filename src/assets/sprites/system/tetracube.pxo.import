@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/tetracube.pxo-c51e7b111f8ff001e3b1360149a477dd.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/system/tetracube.pxo"
+dest_files=[ "res://.import/tetracube.pxo-c51e7b111f8ff001e3b1360149a477dd.stex" ]
+
+[params]
+

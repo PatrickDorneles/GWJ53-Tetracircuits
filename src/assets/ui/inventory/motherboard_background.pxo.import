@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/motherboard_background.pxo-0b84fc83abf7aca60bbf586aefb4354f.stex"
+
+[deps]
+
+source_file="res://src/assets/ui/inventory/motherboard_background.pxo"
+dest_files=[ "res://.import/motherboard_background.pxo-0b84fc83abf7aca60bbf586aefb4354f.stex" ]
+
+[params]
+

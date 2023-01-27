@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/h_separator.pxo-15578a9078235499d1044f095de55ad0.stex"
+
+[deps]
+
+source_file="res://src/assets/ui/inventory/h_separator.pxo"
+dest_files=[ "res://.import/h_separator.pxo-15578a9078235499d1044f095de55ad0.stex" ]
+
+[params]
+

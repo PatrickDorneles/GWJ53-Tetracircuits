@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/test_tile.png.pxo-63dbff2c55ddd02d0d5bc8eda66b1fde.stex"
+
+[deps]
+
+source_file="res://src/assets/tilesets/test_tile.png.pxo"
+dest_files=[ "res://.import/test_tile.png.pxo-63dbff2c55ddd02d0d5bc8eda66b1fde.stex" ]
+
+[params]
+

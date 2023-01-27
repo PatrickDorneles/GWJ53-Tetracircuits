@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/system/tetrachip/Tetrachip.tscn" type="PackedScene" id=1]
+
+[node name="Tetramove" instance=ExtResource( 1 )]
+description = "[u]Passive[/u]
+Enables you to :walk: with [W](Up), [A](Left), [S](Down) and [D](Right),
+"
+cost = 0
+effects = PoolStringArray( "enable_movement" )
+
+[node name="Placement4" parent="CubePlacement" index="3"]
+margin_left = 16.0
+margin_right = 16.0

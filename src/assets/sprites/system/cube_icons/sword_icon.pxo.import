@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/sword_icon.pxo-339ca39bfb04b4c056a7ceacd6dc5b77.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/system/cube_icons/sword_icon.pxo"
+dest_files=[ "res://.import/sword_icon.pxo-339ca39bfb04b4c056a7ceacd6dc5b77.stex" ]
+
+[params]
+

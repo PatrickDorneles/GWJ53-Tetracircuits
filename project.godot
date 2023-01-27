@@ -17,17 +17,23 @@ _global_script_classes=[ {
 "base": "TextureRect",
 "class": "MotherboardSlot",
 "language": "GDScript",
-"path": "res://src/system/MotherboardSlot.gd"
+"path": "res://src/system/ItemSlot.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/entities/player/Player.gd"
+}, {
+"base": "Control",
+"class": "Tetracube",
+"language": "GDScript",
+"path": "res://src/system/tetrachip/Tetracube.gd"
 } ]
 _global_script_class_icons={
 "DraggableControl": "",
 "MotherboardSlot": "",
-"Player": ""
+"Player": "",
+"Tetracube": ""
 }
 
 [application]
@@ -38,9 +44,9 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=360
-window/size/height=202
-window/dpi/allow_hidpi=true
+window/size/width=480
+window/size/height=270
+window/vsync/use_vsync=false
 mouse_cursor/custom_image="res://src/assets/ui/mouse_common.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
@@ -84,11 +90,17 @@ jump={
 rotate_chip_r={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":69,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 rotate_chip_l={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":81,"unicode":0,"echo":false,"script":null)
+ ]
+}
+toggle_inventory={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777218,"unicode":0,"echo":false,"script":null)
  ]
 }
 
@@ -98,8 +110,14 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/filters/sharpen_intensity=1.0
 quality/driver/driver_name="GLES2"
+2d/options/use_nvidia_rect_flicker_workaround=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+2d/options/use_software_skinning=false
+2d/options/ninepatch_mode=0
 environment/default_clear_color=Color( 0.2, 0.172549, 0.313726, 1 )
+quality/filters/msaa=1
+quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"

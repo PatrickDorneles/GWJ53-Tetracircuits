@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/attack_w.player.pxo-f39e15ee72529e7d9864c96938dcc388.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/player/attack_w.player.pxo"
+dest_files=[ "res://.import/attack_w.player.pxo-f39e15ee72529e7d9864c96938dcc388.stex" ]
+
+[params]
+

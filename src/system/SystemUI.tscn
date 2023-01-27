@@ -1,20 +1,30 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://src/assets/sprites/system_background.pxo" type="Texture" id=1]
+[ext_resource path="res://src/assets/ui/inventory/motherboard_background.pxo" type="Texture" id=1]
 [ext_resource path="res://src/system/Motherboard.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/system/tetrachip/Tetrachip.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/assets/ui/close_backpack_button.pxo" type="Texture" id=4]
-[ext_resource path="res://src/assets/ui/close_backpack_button.pressed.pxo" type="Texture" id=5]
+[ext_resource path="res://src/system/tetrachip/chips/Tetramove.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/assets/ui/inventory/close_backpack_button.pxo" type="Texture" id=4]
+[ext_resource path="res://src/assets/ui/inventory/close_backpack_button.pressed.pxo" type="Texture" id=5]
 [ext_resource path="res://src/system/SystemUI.gd" type="Script" id=6]
-[ext_resource path="res://src/assets/ui/backpack_button.hover.pxo" type="Texture" id=7]
-[ext_resource path="res://src/assets/ui/backpack_button.pressed.pxo" type="Texture" id=8]
-[ext_resource path="res://src/assets/ui/backpack_button.pxo" type="Texture" id=9]
-[ext_resource path="res://src/assets/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://src/assets/ui/close_backpack_button.hover.pxo" type="Texture" id=11]
+[ext_resource path="res://src/assets/ui/inventory/backpack_button.hover.pxo" type="Texture" id=7]
+[ext_resource path="res://src/assets/ui/inventory/backpack_button.pressed.pxo" type="Texture" id=8]
+[ext_resource path="res://src/assets/ui/inventory/backpack_button.pxo" type="Texture" id=9]
+[ext_resource path="res://src/assets/fonts/PublicPixel-z84yD.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://src/assets/ui/inventory/close_backpack_button.hover.pxo" type="Texture" id=11]
+[ext_resource path="res://src/assets/ui/inventory/h_separator.pxo" type="Texture" id=12]
+[ext_resource path="res://src/system/tetrachip/chips/Tetrashield.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/assets/ui/inventory/inventory_background.pxo" type="Texture" id=14]
+[ext_resource path="res://src/system/ItemSlot.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/system/tetrachip/chips/Tetrasword.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
+use_mipmaps = true
 font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 16, 1 )
 
 [sub_resource type="Shader" id=2]
 code = "/*
@@ -251,8 +261,8 @@ void fragment()
 render_priority = 1
 shader = SubResource( 2 )
 shader_param/overlay = true
-shader_param/scanlines_opacity = 0.212
-shader_param/scanlines_width = 0.114
+shader_param/scanlines_opacity = 0.153
+shader_param/scanlines_width = 0.0
 shader_param/grille_opacity = 0.0
 shader_param/resolution = Vector2( 640, 480 )
 shader_param/pixelate = true
@@ -262,38 +272,39 @@ shader_param/roll_size = 0.0
 shader_param/roll_variation = 0.1
 shader_param/distort_intensity = 0.0
 shader_param/noise_opacity = 0.0
-shader_param/noise_speed = 5.0
-shader_param/static_noise_intensity = 0.06
+shader_param/noise_speed = 0.0
+shader_param/static_noise_intensity = 0.0
 shader_param/aberration = 0.0
 shader_param/brightness = 1.4
-shader_param/discolor = true
-shader_param/warp_amount = 0.0
+shader_param/discolor = false
+shader_param/warp_amount = 0.057
 shader_param/clip_warp = false
-shader_param/vignette_intensity = 0.4
-shader_param/vignette_opacity = 0.579
+shader_param/vignette_intensity = 0.6
+shader_param/vignette_opacity = 0.668
 
 [node name="SystemUI" type="CanvasLayer"]
+layer = 0
 script = ExtResource( 6 )
 
-[node name="Backpack" type="NinePatchRect" parent="."]
-margin_right = 96.0
-margin_bottom = 202.0
+[node name="System" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="System"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.2, 0.172549, 0.313726, 0.470588 )
+
+[node name="Motherboard" type="NinePatchRect" parent="System"]
+margin_right = 114.0
+margin_bottom = 270.0
 texture = ExtResource( 1 )
 patch_margin_left = 9
 patch_margin_top = 9
-patch_margin_right = 9
+patch_margin_right = 10
 patch_margin_bottom = 9
 
-[node name="Motherboard" parent="Backpack" instance=ExtResource( 2 )]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-margin_left = -32.0
-margin_top = 41.0
-margin_right = 32.0
-margin_bottom = 105.0
-
-[node name="CloseButton" type="TextureButton" parent="Backpack"]
+[node name="CloseButton" type="TextureButton" parent="System/Motherboard"]
 margin_left = 9.0
 margin_top = 9.0
 margin_right = 25.0
@@ -302,28 +313,461 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 11 )
 
-[node name="MotherboardLabel" type="Label" parent="Backpack"]
+[node name="SystemUILabel" type="Label" parent="System/Motherboard"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -36.0
-margin_top = 29.0
-margin_right = 36.0
-margin_bottom = 37.0
+margin_left = -25.0
+margin_top = 13.0
+margin_right = 47.0
+margin_bottom = 21.0
 custom_fonts/font = SubResource( 1 )
-text = "mothrbord"
+text = "SYSTEM_UI"
+align = 1
 
-[node name="Tetrachip" parent="Backpack" instance=ExtResource( 3 )]
-margin_left = 25.0
-margin_top = 144.0
-margin_right = 73.0
-margin_bottom = 176.0
+[node name="HSeparatorHeader" type="HSeparator" parent="System/Motherboard"]
+margin_left = 6.0
+margin_top = 26.0
+margin_right = 108.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 63, -60 )
+custom_styles/separator = SubResource( 4 )
+
+[node name="MotherboardLabel" type="Label" parent="System/Motherboard"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -44.0
+margin_top = 34.0
+margin_right = 44.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+text = "motherboard"
+align = 1
+
+[node name="Motherboard" parent="System/Motherboard" instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -41.0
+margin_top = 46.0
+margin_right = 41.0
+margin_bottom = 127.0
+
+[node name="Inventory" type="NinePatchRect" parent="System"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -128.0
+margin_bottom = 136.0
+texture = ExtResource( 14 )
+patch_margin_left = 10
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 10
+
+[node name="InventoryLabel" type="Label" parent="System/Inventory"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -44.0
+margin_top = 11.0
+margin_right = 44.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 1 )
+text = "inventory"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="System/Inventory"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -48.0
+margin_top = 24.0
+margin_right = 48.0
+margin_bottom = 120.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 6
+
+[node name="Slot" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 16.0
+margin_bottom = 16.0
+
+[node name="Slot2" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 0.0
+margin_right = 32.0
+margin_bottom = 16.0
+
+[node name="Slot3" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 0.0
+margin_right = 48.0
+margin_bottom = 16.0
+
+[node name="Slot4" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 0.0
+margin_right = 64.0
+margin_bottom = 16.0
+
+[node name="Slot5" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = 0.0
+margin_right = 80.0
+margin_bottom = 16.0
+
+[node name="Slot6" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 0.0
+margin_right = 96.0
+margin_bottom = 16.0
+
+[node name="Slot7" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 16.0
+margin_right = 16.0
+margin_bottom = 32.0
+
+[node name="Slot8" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 32.0
+margin_bottom = 32.0
+
+[node name="Slot9" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 32.0
+
+[node name="Slot10" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 16.0
+margin_right = 64.0
+margin_bottom = 32.0
+
+[node name="Slot11" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = 16.0
+margin_right = 80.0
+margin_bottom = 32.0
+
+[node name="Slot12" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 16.0
+margin_right = 96.0
+margin_bottom = 32.0
+
+[node name="Slot13" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 32.0
+margin_right = 16.0
+margin_bottom = 48.0
+
+[node name="Slot14" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 48.0
+
+[node name="Slot15" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 48.0
+margin_bottom = 48.0
+
+[node name="Slot16" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 32.0
+margin_right = 64.0
+margin_bottom = 48.0
+
+[node name="Slot17" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 80.0
+margin_bottom = 48.0
+
+[node name="Slot18" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 32.0
+margin_right = 96.0
+margin_bottom = 48.0
+
+[node name="Slot19" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 48.0
+margin_right = 16.0
+margin_bottom = 64.0
+
+[node name="Slot20" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 32.0
+margin_bottom = 64.0
+
+[node name="Slot21" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 48.0
+margin_right = 48.0
+margin_bottom = 64.0
+
+[node name="Slot22" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 64.0
+margin_bottom = 64.0
+
+[node name="Slot23" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = 48.0
+margin_right = 80.0
+margin_bottom = 64.0
+
+[node name="Slot24" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 48.0
+margin_right = 96.0
+margin_bottom = 64.0
+
+[node name="Slot25" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 64.0
+margin_right = 16.0
+margin_bottom = 80.0
+
+[node name="Slot26" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 80.0
+
+[node name="Slot27" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 64.0
+margin_right = 48.0
+margin_bottom = 80.0
+
+[node name="Slot28" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 80.0
+
+[node name="Slot29" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 80.0
+margin_bottom = 80.0
+
+[node name="Slot30" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 64.0
+margin_right = 96.0
+margin_bottom = 80.0
+
+[node name="Slot31" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 80.0
+margin_right = 16.0
+margin_bottom = 96.0
+
+[node name="Slot32" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 32.0
+margin_bottom = 96.0
+
+[node name="Slot33" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 80.0
+margin_right = 48.0
+margin_bottom = 96.0
+
+[node name="Slot34" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 80.0
+margin_right = 64.0
+margin_bottom = 96.0
+
+[node name="Slot35" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = 80.0
+margin_right = 80.0
+margin_bottom = 96.0
+
+[node name="Slot36" parent="System/Inventory/GridContainer" instance=ExtResource( 15 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 96.0
+margin_bottom = 96.0
+
+[node name="Tetrasword" parent="System" instance=ExtResource( 16 )]
+margin_left = 392.0
+margin_top = 48.0
+margin_right = 392.0
+margin_bottom = 48.0
+
+[node name="Tetrashield" parent="System" instance=ExtResource( 13 )]
+margin_left = 432.0
+margin_top = 96.0
+margin_right = 432.0
+margin_bottom = 96.0
+
+[node name="Tetramove" parent="System" instance=ExtResource( 3 )]
+margin_left = 48.0
+margin_top = 88.0
+margin_right = 48.0
+margin_bottom = 88.0
 
 [node name="OpenButton" type="TextureButton" parent="."]
-visible = false
-margin_left = 7.0
-margin_top = 179.0
-margin_right = 23.0
-margin_bottom = 195.0
+margin_left = 8.0
+margin_top = 248.0
+margin_right = 24.0
+margin_bottom = 264.0
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 7 )
@@ -335,5 +779,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[connection signal="pressed" from="Backpack/CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="System/Motherboard/CloseButton" to="." method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="OpenButton" to="." method="_on_OpenButton_pressed"]

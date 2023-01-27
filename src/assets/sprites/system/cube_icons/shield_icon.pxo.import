@@ -1,0 +1,13 @@
+[remap]
+
+importer="com.technohacker.pixelorama"
+type="StreamTexture"
+path="res://.import/shield_icon.pxo-6985b83096f38919917b31ffc2bebb09.stex"
+
+[deps]
+
+source_file="res://src/assets/sprites/system/cube_icons/shield_icon.pxo"
+dest_files=[ "res://.import/shield_icon.pxo-6985b83096f38919917b31ffc2bebb09.stex" ]
+
+[params]
+

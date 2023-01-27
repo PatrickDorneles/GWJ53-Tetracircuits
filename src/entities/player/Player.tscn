@@ -437,7 +437,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 6.5 )
+extents = Vector2( 6, 2 )
 
 [sub_resource type="AnimationNodeAnimation" id=11]
 animation = "idle_s"
@@ -521,7 +521,7 @@ anims/walk_s = SubResource( 3 )
 anims/walk_w = SubResource( 8 )
 
 [node name="PhysicalCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -6.5 )
+position = Vector2( 0, -2 )
 shape = SubResource( 1 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -533,10 +533,8 @@ parameters/Idle/blend_position = Vector2( 0.00157976, 0.0344827 )
 parameters/Walk/blend_position = Vector2( 0.472354, -0.112069 )
 
 [node name="ChipCollectionArea" type="Area2D" parent="."]
+visible = false
 
 [node name="Shape" type="CollisionShape2D" parent="ChipCollectionArea"]
 position = Vector2( 0, -2 )
 shape = SubResource( 25 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
