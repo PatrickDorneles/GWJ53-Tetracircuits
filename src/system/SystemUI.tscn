@@ -745,19 +745,21 @@ margin_top = 80.0
 margin_right = 96.0
 margin_bottom = 96.0
 
-[node name="Tetrasword" parent="System" instance=ExtResource( 16 )]
+[node name="ChipManager" type="Node" parent="System" groups=["ChipManager"]]
+
+[node name="Tetrasword" parent="System/ChipManager" instance=ExtResource( 16 )]
 margin_left = 392.0
 margin_top = 48.0
 margin_right = 392.0
 margin_bottom = 48.0
 
-[node name="Tetrashield" parent="System" instance=ExtResource( 13 )]
+[node name="Tetrashield" parent="System/ChipManager" instance=ExtResource( 13 )]
 margin_left = 432.0
 margin_top = 96.0
 margin_right = 432.0
 margin_bottom = 96.0
 
-[node name="Tetramove" parent="System" instance=ExtResource( 3 )]
+[node name="Tetramove" parent="System/ChipManager" instance=ExtResource( 3 )]
 margin_left = 48.0
 margin_top = 88.0
 margin_right = 48.0

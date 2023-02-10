@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Control",
-"class": "DraggableControl",
-"language": "GDScript",
-"path": "res://src/utils/DraggableControl.gd"
-}, {
 "base": "TextureRect",
 "class": "MotherboardSlot",
 "language": "GDScript",
@@ -30,7 +25,6 @@ _global_script_classes=[ {
 "path": "res://src/system/tetrachip/Tetracube.gd"
 } ]
 _global_script_class_icons={
-"DraggableControl": "",
 "MotherboardSlot": "",
 "Player": "",
 "Tetracube": ""
@@ -41,6 +35,10 @@ _global_script_class_icons={
 config/name="Tetracircuits"
 run/main_scene="res://src/test/TestStage.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+ItemDraggingController="*res://src/autoloads/ItemDraggingController.gd"
 
 [display]
 

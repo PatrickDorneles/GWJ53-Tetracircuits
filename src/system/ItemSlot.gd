@@ -30,7 +30,7 @@ func _process(delta: float):
 	cube_in = cube_overlapping
 
 	if cube_in != null:
-		modulate = Color.green
+		modulate = Color("#94e344")
 	else:
 		modulate = Color.white
 

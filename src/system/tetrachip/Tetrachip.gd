@@ -65,16 +65,19 @@ func _input(event):
 		set_global_position(initial_position)
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-		if event.is_pressed() and hovering:
+		if event.is_pressed() and hovering and not ItemDraggingController.is_dragging():
 			for cube in $Cubes.get_children(): cube.start_drag()
 			initial_drag_position = $Cubes.global_position
 			drag_start_position = get_viewport().get_mouse_position() - initial_drag_position
 			rect_pivot_offset = drag_start_position
+			
 			$Cubes.set_position(Vector2.ZERO)
 			get_tree().call_group("Motherboard", 'remove_chip', self)
 			
 			placed = false
 			dragging = true
+			
+			ItemDraggingController.start_dragging_item(self)
 
 		elif hovering:
 			try_to_place_chip()
@@ -103,6 +106,7 @@ func place_chip_on_slot():
 		get_tree().call_group("Motherboard", 'add_chip', self)
 	
 	placed = true
+	ItemDraggingController.drop_item()
 
 func try_to_place_chip():
 	if placed or dragging:
